@@ -6,6 +6,10 @@ This project helps students navigate around campus
 
 In the project directory, you can run:
 
+### `npm i`
+
+Install the dev dependencies. 
+
 ### `npm start`
 
 Runs the app in the development mode.\
