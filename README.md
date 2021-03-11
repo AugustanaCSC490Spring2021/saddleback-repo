@@ -1,6 +1,6 @@
 # Augie nav page
 
-This project helps students navigate around campus
+This project helps students navigate around campus. 
 
 ## Available Scripts
 
