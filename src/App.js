@@ -1,6 +1,6 @@
 import './App.css';
 import React, { Component } from 'react'
-import {getAcademicBuildingInfo} from './api/academic-buildingInfo'
+import {loadAcademicBuildingInfo} from './api/academic-buildingInfo'
 
 
 export default class App extends Component {
@@ -9,12 +9,23 @@ export default class App extends Component {
     this.state = {
       value: '',
       title:'default',
-      describtion: 'default',
+      description: 'default',
       image: "https://picsum.photos/200/300" //random image to
   };
 
+  this.setInformation = this.setInformation.bind(this)
   this.handleChange = this.handleChange.bind(this);
   }
+
+  
+ setInformation(data){
+  console.log('data recived', )
+  this.setState({
+      title: data.title,
+      description: data.description,
+      image: data.image
+    })
+ }
 
   handleChange(event) {
     this.setState({value: event.target.value});
@@ -22,13 +33,7 @@ export default class App extends Component {
 
   handleSearch = () => {
     console.log('Search for: ' + this.state.value);
-    var infoAboutBuilding = getAcademicBuildingInfo(this.state.value);
-    console.log("info", infoAboutBuilding)  // when info comeback into extract it to sent the parameters below
-    // this.setState({
-    //   title: myData.title,
-    //   describtion: myData.describtion,
-    //   image: myData.image
-    // })
+    loadAcademicBuildingInfo(this.state.value, this.setInformation);
   }
 
 render() {
@@ -38,8 +43,8 @@ render() {
     <input type='textfield' id = 'findTitle' value= {this.state.value} onChange= {this.handleChange}/>
     <button id="searchButton" onClick = {this.handleSearch}> Search </button>
     <h1>{'title:', this.state.title}</h1>
-    <h4>{'describtion:', this.state.describtion}</h4>
-    <img src= {this.state.image} alt="new"/>
+    <h4>{'describtion:', this.state.description}</h4>
+    <img src= {this.state.image} alt="new" width="400" height="400"/>
 </div>
     );
   }
