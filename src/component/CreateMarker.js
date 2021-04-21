@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Marker } from '@react-google-maps/api';
 import InfoBox from './InfoBox'
-import { firestore, firebase } from '../firebase-config'
+import { firestore } from '../firebase-config'
 
 
 export default class CreateMarker extends Component {
@@ -19,9 +19,8 @@ export default class CreateMarker extends Component {
 
   async componentDidMount() {
     const data = await this.fetchData(this.state.marker.id)
-    console.log(data)
     this.setState({
-        markerInfo: data
+      markerInfo: data
     })
   }
 
@@ -54,12 +53,12 @@ export default class CreateMarker extends Component {
           onClick={() => this.handleMarkerClick()}
           title={this.state.marker.id}
         />
-        {markerClicked ? 
-        <InfoBox
-          handleBoxClosed={this.handleBoxClosed}
-          markerClicked={this.state.marker}
-          markerInfo ={this.state.markerInfo}
-        />
+        {markerClicked ?
+          <InfoBox
+            handleBoxClosed={this.handleBoxClosed}
+            markerClicked={this.state.marker}
+            markerInfo={this.state.markerInfo}
+          />
           : null}
       </div>
     )
