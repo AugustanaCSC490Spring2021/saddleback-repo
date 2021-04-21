@@ -12,17 +12,15 @@ export default class InfoBox extends Component {
 
     render() {
         return (
-            <InfoWindow
-                position={this.state.markerClicked.position}
-                onCloseClick={() => { this.props.handleBoxClosed() }}
-            >
-                <div>
-                <h1>{this.state.markerInfo.title}</h1>
-                <img src= {this.state.markerInfo.image}  width="200" height="200" alt = {this.state.markerClicked.id}/>
-                <p>{this.state.markerInfo.description}</p>
-                </div>
-            </InfoWindow>
-
-        )
+                <InfoWindow
+                    position={this.state.markerClicked.position}
+                    onCloseClick={() => { this.props.handleBoxClosed() }}
+                >
+                    <div style={{ width: 300, height: 300 }}>
+                        <h1>{this.state.markerInfo.title}</h1>
+                        <img src={this.state.markerInfo.image} width="300" height="200" alt={this.state.markerClicked.id} />
+                        <p>{this.state.markerInfo.description}</p>
+                    </div>
+                </InfoWindow>        )
     }
 }
