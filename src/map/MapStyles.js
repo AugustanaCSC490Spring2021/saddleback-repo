@@ -7,5 +7,15 @@ export const mapStyles = [
                 "visibility": "off"
             }
         ]
+    },
+    {
+        "featureType": "transit",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
     }
+    
 ]
