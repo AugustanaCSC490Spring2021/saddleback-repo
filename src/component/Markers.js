@@ -7,6 +7,9 @@ export default class Markers extends Component {
             <div>
                 <CreateMarker name={'Olin'} lat={41.50315} lng={-90.550581} />
                 <CreateMarker name={'Hanson'} lat={41.503841} lng={-90.5513} />
+                <CreateMarker name={'Gerber Center'} lat={41.502282} lng={-90.550689} />
+                <CreateMarker name={'Hanson Expansion'} lat={41.504297} lng={-90.551095} />
+                <CreateMarker name={'Old Main'} lat={41.504439} lng={-90.549609} />
             </div>
         )
     }
