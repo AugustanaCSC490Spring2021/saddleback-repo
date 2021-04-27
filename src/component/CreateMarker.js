@@ -10,7 +10,8 @@ export default class CreateMarker extends Component {
     this.state = {
       marker: {
         id: props.name,
-        position: { lat: props.lat, lng: props.lng }
+        position: { lat: props.lat, lng: props.lng },
+        collection: props.type
       },
       markerClicked: false,
       markerInfo: null
@@ -18,14 +19,14 @@ export default class CreateMarker extends Component {
   }
 
   async componentDidMount() {
-    const data = await this.fetchData(this.state.marker.id)
+    const data = await this.fetchData(this.state.marker.collection,this.state.marker.id)
     this.setState({
       markerInfo: data
     })
   }
 
-  fetchData = async (markerName) => {
-    const data = await firestore.doc(`academic/${markerName}`).get().then(function (snapshot) {
+  fetchData = async (collection,markerName) => {
+    const data = await firestore.doc(`${collection}/${markerName}`).get().then(function (snapshot) {
       if (snapshot.exists) {
         return snapshot.data()
       }
@@ -52,6 +53,9 @@ export default class CreateMarker extends Component {
           position={this.state.marker.position}
           onClick={() => this.handleMarkerClick()}
           title={this.state.marker.id}
+          icon={{
+            url:`/${this.state.marker.collection}.png`
+          }}
         />
         {markerClicked ?
           <InfoBox
