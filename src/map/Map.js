@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { GoogleMap, LoadScript } from '@react-google-maps/api';
 import { mapStyles } from './MapStyles'
 import Markers from '../component/Markers';
+import AcesRoute from '../component/AcesRoute'
 
 const containerStyle = {
     width: '100vw',
@@ -49,6 +50,7 @@ export default class Map extends Component {
                     >
                         {/* Child components, such as markers, info windows, etc. */}
                         <Markers />
+                        <AcesRoute/>
                     </GoogleMap>
                 </LoadScript>
             </div>
