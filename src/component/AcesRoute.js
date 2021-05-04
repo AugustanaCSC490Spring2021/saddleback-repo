@@ -57,7 +57,7 @@ export default class AcesRoute extends Component {
         return (
             <div>
                 <button onClick={() => this.handleClick()}>
-                    {this.state.isShown ? "Hidde ACES Route" : "Show ACES Route"}
+                    {this.state.isShown ? "Hide ACES Route" : "Show ACES Route"}
                 </button>
                 <Polyline
                     path={AcesRouteCordin}
