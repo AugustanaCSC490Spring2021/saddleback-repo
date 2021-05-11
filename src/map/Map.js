@@ -86,7 +86,7 @@ export default class Map extends Component {
               📡
             </span>
           </h1>
-          <SearchBox handleSearch={this.handleSearch}/>
+          {/* <SearchBox handleSearch={this.handleSearch}/> */}
 
           <GoogleMap
             mapContainerStyle={containerStyle}
