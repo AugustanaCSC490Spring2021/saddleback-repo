@@ -1,52 +1,67 @@
-import React, { Component } from 'react'
-import { Marker } from '@react-google-maps/api';
-import InfoBox from './InfoBox'
-import { firestore } from '../firebase-config'
-
+import React, { Component } from "react";
+import { Marker } from "@react-google-maps/api";
+import InfoBox from "./InfoBox";
+import { firestore } from "../firebase-config";
 
 export default class CreateMarker extends Component {
   constructor(props) {
-    super(props)
+    super(props);
+    console.log(props.name);
     this.state = {
       marker: {
         id: props.name,
         position: { lat: props.lat, lng: props.lng },
-        collection: props.type
+        collection: props.type,
       },
       markerClicked: false,
-      markerInfo: null
+      markerInfo: null,
+    };
+  }
+  static getDerivedStateFromProps(props, current_state) {
+    if (current_state.name !== props.name) {
+      return {
+        marker: {
+          id: props.name,
+          position: { lat: props.lat, lng: props.lng },
+          collection: props.type,
+        },
+      };
     }
   }
 
-  async componentDidMount() {
-    const data = await this.fetchData(this.state.marker.collection,this.state.marker.id)
-    this.setState({
-      markerInfo: data
-    })
-  }
 
-  fetchData = async (collection,markerName) => {
-    const data = await firestore.doc(`${collection}/${markerName}`).get().then(function (snapshot) {
-      if (snapshot.exists) {
-        return snapshot.data()
-      }
-    })
-    return data
-  }
+  fetchData = async (collection, markerName) => {
+    const data = await firestore
+      .doc(`${collection}/${markerName}`)
+      .get()
+      .then(function (snapshot) {
+        if (snapshot.exists) {
+          return snapshot.data();
+        }
+      });
+    return data;
+  };
 
-  handleMarkerClick = () => {
+  handleMarkerClick = async () => {
+    const data = await this.fetchData(
+      this.state.marker.collection,
+      this.state.marker.id
+    );
     this.setState({
-      markerClicked: true
+      markerInfo: data,
+      markerClicked: true,
     });
-  }
+    // this.setState({
+    // });
+  };
   handleBoxClosed = () => {
     this.setState({
-      markerClicked: false
+      markerClicked: false,
     });
-  }
+  };
 
   render() {
-    const markerClicked = this.state.markerClicked
+    const markerClicked = this.state.markerClicked;
     return (
       <div>
         <Marker
@@ -54,17 +69,17 @@ export default class CreateMarker extends Component {
           onClick={() => this.handleMarkerClick()}
           title={this.state.marker.id}
           icon={{
-            url:`/${this.state.marker.collection}.png`
+            url: `/${this.state.marker.collection}.png`,
           }}
         />
-        {markerClicked ?
+        {markerClicked ? (
           <InfoBox
             handleBoxClosed={this.handleBoxClosed}
             markerClicked={this.state.marker}
             markerInfo={this.state.markerInfo}
           />
-          : null}
+        ) : null}
       </div>
-    )
+    );
   }
 }
