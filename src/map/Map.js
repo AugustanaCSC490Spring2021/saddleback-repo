@@ -1,8 +1,10 @@
-import React, { Component } from 'react'
-import { GoogleMap, LoadScript } from '@react-google-maps/api';
-import { mapStyles } from './MapStyles'
+import React, { Component } from 'react';
+import { GoogleMap, LoadScript, DirectionsRenderer, DirectionsService, } from '@react-google-maps/api';
+import { mapStyles } from './MapStyles';
 import Markers from '../component/Markers';
-import AcesRoute from '../component/AcesRoute'
+import AcesRoute from '../component/AcesRoute';
+
+const { withScriptjs, withGoogleMap } = require("react-google-maps");
 
 const containerStyle = {
     width: '100vw',
@@ -20,7 +22,7 @@ const AUGUSTANA_BOUNDS = {
     east: -90.544640,
 };
 
-const libraries = ["places"]
+const libraries = ["places", "directions"]
 const options = {
     styles: mapStyles,
     mapTypeId: 'hybrid',
@@ -35,25 +37,25 @@ export default class Map extends Component {
     render() {
         return (
             <div>
-                <LoadScript
-                    googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
-                    libraries={libraries}
-                >
-                    <h1>
-                        Augie Nav <span role="img" aria-label="satellite">📡</span>
-                    </h1>
-                    <GoogleMap
-                        mapContainerStyle={containerStyle}
-                        center={center}
-                        zoom={18}
-                        options={options}
-                    >
-                        {/* Child components, such as markers, info windows, etc. */}
-                        <Markers />
-                        <AcesRoute/>
-                    </GoogleMap>
-                </LoadScript>
-            </div>
-        )
-    }
+            <LoadScript
+                googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
+                libraries={libraries}
+            >
+            <h1>
+                Augie Nav <span role="img" aria-label="satellite">📡</span>
+            </h1>
+            <GoogleMap
+                mapContainerStyle={containerStyle}
+                center={center}
+                zoom={18}
+                options={options}
+            >
+            {/* Child components, such as markers, info windows, etc. */}
+            <Markers />
+            <AcesRoute/>
+            </GoogleMap>
+            </LoadScript>
+         </div>
+    );
+}
 }
