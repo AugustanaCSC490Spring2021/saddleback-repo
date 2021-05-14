@@ -17,7 +17,7 @@ export default class InfoBox extends Component {
                     onCloseClick={() => { this.props.handleBoxClosed() }}
                 >
                     <div style={{ width: 300, height: 300 }}>
-                        <h1>{this.state.markerInfo.title}</h1>
+                        <h2>{this.state.markerInfo.title}</h2>
                         <img src={this.state.markerInfo.image} width="300" height="200" alt={this.state.markerClicked.id} />
                         <p>{this.state.markerInfo.description}</p>
                     </div>
