@@ -59,23 +59,23 @@ const markers = [
   },
 ];
 export default class Map extends Component {
+
   state = {
     filteredData: markers,
   };
+
   handleSearch = (e) => {
     const { value } = e.target;
     let filteredData = markers.filter((item) => {
       let currentvalue = item.name;
       return currentvalue.toLowerCase().includes(value.toLowerCase());
     });
-    console.log(filteredData);
     this.setState({ filteredData });
   };
 
   render() {
     return (
       <div>
-        {/* <Search/> */}
         <LoadScript
           googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
           libraries={libraries}
@@ -86,7 +86,6 @@ export default class Map extends Component {
               📡
             </span>
           </h1>
-          {/* <SearchBox handleSearch={this.handleSearch}/> */}
 
           <GoogleMap
             mapContainerStyle={containerStyle}
@@ -99,7 +98,8 @@ export default class Map extends Component {
             <Markers markers={this.state.filteredData} />
 
             <AcesRoute />
-            
+            <SearchBox handleSearch={this.handleSearch}/>
+
           </GoogleMap>
           
         </LoadScript>

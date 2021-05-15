@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function SearchBox(props) {
     return (
-        <div className="App">
+        <div className="SearchBox">
              <input 
                 type="text"
                 placeholder="🔎Search..."
