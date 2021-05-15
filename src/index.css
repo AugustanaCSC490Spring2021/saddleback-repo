@@ -14,9 +14,25 @@ code {
 
 h1 {
   position: absolute;
+  color: #ffef0a;
+  text-shadow: -2px 0 blue, 0 2px blue, 2px 0 blue, 0 -2px blue;
+  background-color: rgba(122, 122, 122, 0.801);
+  font-size: 40pt;
   top: 1rem;
   left: 1rem;
+  z-index: 2;
+  margin: 0;
+  padding: 0
+}
+
+h2 {
+  position: absolute;
   color: #ffef0a;
+  text-shadow: -2px 0 blue, 0 2px blue, 2px 0 blue, 0 -2px blue;
+  background-color: rgba(122, 122, 122, 0.801);
+  font-size: 20pt;
+  top: 1rem;
+  left: 1rem;
   z-index: 2;
   margin: 0;
   padding: 0
