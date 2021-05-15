@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { GoogleMap, LoadScript, DirectionsRenderer, DirectionsService, } from '@react-google-maps/api';
 import { mapStyles } from "./MapStyles";
 import Markers from "../component/Markers";
-import AcesRoute from "../component/AcesRoute";
+import Routes from "../component/Routes";
 import SearchBox from "../component/searchBox";
 import {markersLocation} from '../utility/MarkersLocation';
 
@@ -73,8 +73,6 @@ export default class Map extends Component {
             {/* Child components, such as markers, info windows, etc. */}
             
             <Markers markers={this.state.filteredData} />
-
-            <AcesRoute />
             <SearchBox handleSearch={this.handleSearch}/>
             <Routes />
 
