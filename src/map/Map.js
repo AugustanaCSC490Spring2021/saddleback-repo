@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import { GoogleMap, LoadScript, DirectionsRenderer, DirectionsService, } from '@react-google-maps/api';
+import { GoogleMap, LoadScript} from '@react-google-maps/api';
 import { mapStyles } from "./MapStyles";
 import Markers from "../component/Markers";
 import Routes from "../component/Routes";
 import SearchBox from "../component/searchBox";
 import {markersLocation} from '../utility/MarkersLocation';
 
-const { withScriptjs, withGoogleMap } = require("react-google-maps");
 
 
 const containerStyle = {

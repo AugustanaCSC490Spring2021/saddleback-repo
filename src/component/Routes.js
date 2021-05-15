@@ -19,8 +19,6 @@ export default class Routes extends Component {
     }
     handleClick = (buttonClicked) => {
         if(buttonClicked === 'ACES'){
-            console.log(buttonClicked)
-
             this.setState({
                 isShownAces: !this.state.isShownAces
             });
