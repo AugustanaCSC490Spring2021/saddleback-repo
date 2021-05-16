@@ -6,7 +6,6 @@ import { firestore } from "../firebase-config";
 export default class CreateMarker extends Component {
   constructor(props) {
     super(props);
-    console.log(props.name);
     this.state = {
       marker: {
         id: props.name,
