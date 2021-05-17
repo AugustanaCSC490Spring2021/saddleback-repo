@@ -27,7 +27,7 @@ export const markersLocation = [
     {
       name:"Bergendoff Hall", 
       lat:"41.505368", 
-      long:"-90.548099", 
+      long:"-90.549215", 
       type:"academic",
     },
     {
