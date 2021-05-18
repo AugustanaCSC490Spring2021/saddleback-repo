@@ -14,7 +14,9 @@ export default class Routes extends Component {
         super(props)
         this.state = {
             isShownAces: false,
-            isShownOlin: false
+            isShownOlin: false,
+            isShownOldMain: false,
+            isShownGerber: false
         }
     }
     handleClick = (buttonClicked) => {
@@ -28,13 +30,22 @@ export default class Routes extends Component {
                 isShownOlin: !this.state.isShownOlin
             });
         }
-      
+        if(buttonClicked === 'Old_Main'){
+            this.setState({
+                isShownOldMain: !this.state.isShownOldMain
+            });
+        }
+        if(buttonClicked === 'Gerber'){
+            this.setState({
+                isShownGerber: !this.state.isShownGerber
+            });
+        }
     }
     render() {
         return (
             <div>
                 <button onClick={() => this.handleClick('ACES')} class="ACES">
-                    {this.state.isShownAces ? "Hide ACES Route" : "Show ACES Route"}
+                    {this.state.isShownAces ? "ACES Route" : "ACES Route"}
                 </button>
                 <Polyline
                     path={ACESRoute}
@@ -50,7 +61,7 @@ export default class Routes extends Component {
                         ]
                     }} />
                 <button onClick = {() => this.handleClick('Olin')} class='Olin'>
-                {this.state.isShownOlin ? "Hide Olin Routes" : "Show Olin Routes"}
+                {this.state.isShownOlin ? "Olin Routes" : "Olin Routes"}
                 </button>
                 <Polyline
                     path={OlinRoute}
@@ -60,28 +71,28 @@ export default class Routes extends Component {
                         scale: 4,
                         strokeColor: "#a600ff"
                     }} />
-                {/* <button onClick = {() => this.handleClick()}>
-                {this.state.isShownAces ? "Hide Old Main Routes" : "Show Old Main Routes"}
+                <button onClick = {() => this.handleClick("Old_Main")} class="Old_Main">
+                {this.state.isShownOldMain ? "Old Main Routes" : "Old Main Routes"}
                 </button>
                 <Polyline
                     path={OldMainRoute}
-                    visible={this.state.isShownAces}
+                    visible={this.state.isShownOldMain}
                     options={{
                         strokeOpacity: 0.7,
                         scale: 4,
                         strokeColor: "#00d5ff"
                     }} />
-                <button onClick = {() => this.handleClick()}>
-                {this.state.isShownAces ? "Hide Gerber Routes" : "Show Gerber Routes"}
+                <button onClick = {() => this.handleClick("Gerber")} class="Gerber">
+                {this.state.isShownGerber ? "Gerber Center Routes" : "Gerber Center Routes"}
                 </button>
                 <Polyline
                     path={GerberRoute}
-                    visible={this.state.isShownAces}
+                    visible={this.state.isShownGerber}
                     options={{
                         strokeOpacity: 0.7,
                         scale: 4,
                         strokeColor: "#ffb300"
-                    }} /> */}
+                    }} />
                 {/*   Child components, such as markers, routes, etc...   */}
             </div>
         );

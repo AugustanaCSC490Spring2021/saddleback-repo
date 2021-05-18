@@ -44,17 +44,37 @@ h2 {
   right: 4rem;
   padding: 4px 30px;
   border-radius: 4px;
+  width: 14%; 
 }
 
 .Olin {
   position: absolute;
-  top: 15rem;
+  top: 3rem;
   right: 4rem;
   padding: 4px 30px;
-  border-radius: 4px; 
+  border-radius: 4px;
+  width: 14%; 
 }
 
-.SearchBox{
+.Old_Main {
+  position: absolute;
+  top: 5rem;
+  right: 4rem;
+  padding: 4px 30px;
+  border-radius: 4px;
+  width: 14%; 
+}
+
+.Gerber {
+  position: absolute;
+  top: 7rem;
+  right: 4rem;
+  padding: 4px 30px;
+  border-radius: 4px;
+  width: 14%; 
+}
+
+.SearchBox {
   position: absolute;
   z-index: 2;
   margin: 0;

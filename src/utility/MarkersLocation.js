@@ -30,6 +30,12 @@ export const markersLocation = [
       long:"-90.549215", 
       type:"academic",
     },
+    {
+      name:"Gerber Center",
+      lat: "41.502559",
+      long: "-90.550047",
+      type:"academic"
+    }
                 
                 //  ,{name={"Bergendoff Hall"}, lat={41.505368}, lng={-90.549215}, type="academic"},
                 //  ,{name={"Brunner Theater"}, lat={41.504402}, lng={-90.548231}, type="academic"},

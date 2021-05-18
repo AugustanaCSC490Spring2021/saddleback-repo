@@ -6,7 +6,6 @@ import { firestore } from "../firebase-config";
 export default class CreateMarker extends Component {
   constructor(props) {
     super(props);
-    console.log(props.name);
     this.state = {
       marker: {
         id: props.name,
@@ -70,6 +69,7 @@ export default class CreateMarker extends Component {
           title={this.state.marker.id}
           icon={{
             url: `/${this.state.marker.collection}.png`,
+            scaledSize:new window.google.maps.Size(50, 50)
           }}
         />
         {markerClicked ? (

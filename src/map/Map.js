@@ -74,9 +74,7 @@ export default class Map extends Component {
             <Markers markers={this.state.filteredData} />
             <SearchBox handleSearch={this.handleSearch}/>
             <Routes />
-
           </GoogleMap>
-          
         </LoadScript>
       </div>
     );
