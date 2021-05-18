@@ -11,7 +11,7 @@ import {markersLocation} from '../utility/MarkersLocation';
 
 const containerStyle = {
   width: "100vw",
-  height: "100vh",
+  height: "95vh",
 };
 
 const center = {
