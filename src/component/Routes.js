@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Polyline } from '@react-google-maps/api';
-import { ACESRoute, OlinRoute, OldMainRoute, GerberRoute } from "../utility/locations";
+import { ACESRoute, OlinRoute, OldMainRoute, GerberRoute } from "../utility/Locations";
 
 const lineSymbol = {
     path: "M 0,-1 0,1",
