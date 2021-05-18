@@ -5,12 +5,13 @@ import Markers from "../component/Markers";
 import Routes from "../component/Routes";
 import SearchBox from "../component/searchBox";
 import {markersLocation} from '../utility/MarkersLocation';
+// import Header from './component/Header'
 
 
 
 const containerStyle = {
   width: "100vw",
-  height: "100vh",
+  height: "95vh",
 };
 
 const center = {
@@ -52,16 +53,12 @@ export default class Map extends Component {
   render() {
     return (
       <div>
+        {/* <Header/> */}
         <LoadScript
           googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
           libraries={libraries}
         >
-          <h1>
-            Augie Nav{" "}
-            <span role="img" aria-label="satellite">
-              📡
-            </span>
-          </h1>
+        
 
           <GoogleMap
             mapContainerStyle={containerStyle}
