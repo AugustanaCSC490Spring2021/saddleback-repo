@@ -1,10 +1,12 @@
 import React, { Component } from "react";
-import { GoogleMap, LoadScript } from "@react-google-maps/api";
+import { GoogleMap, LoadScript} from '@react-google-maps/api';
 import { mapStyles } from "./MapStyles";
 import Markers from "../component/Markers";
-import AcesRoute from "../component/AcesRoute";
+import Routes from "../component/Routes";
 import SearchBox from "../component/searchBox";
-import {markersLocation} from './MarkersLocation';
+import {markersLocation} from '../utility/MarkersLocation';
+
+
 
 const containerStyle = {
   width: "100vw",
@@ -22,7 +24,7 @@ const AUGUSTANA_BOUNDS = {
   east: -90.54464,
 };
 
-const libraries = ["places"];
+const libraries = ["places", "directions"]
 const options = {
   styles: mapStyles,
   mapTypeId: "hybrid",
@@ -34,7 +36,6 @@ const options = {
 };
 
 export default class Map extends Component {
-
   state = {
     filteredData: markersLocation,
   };
@@ -71,12 +72,9 @@ export default class Map extends Component {
             {/* Child components, such as markers, info windows, etc. */}
             
             <Markers markers={this.state.filteredData} />
-
-            <AcesRoute />
             <SearchBox handleSearch={this.handleSearch}/>
-
+            <Routes />
           </GoogleMap>
-          
         </LoadScript>
       </div>
     );

@@ -38,15 +38,43 @@ h2 {
   padding: 0
 }
 
-button {
+.ACES {
   position: absolute;
   top: 1rem;
   right: 4rem;
   padding: 4px 30px;
   border-radius: 4px;
+  width: 17%; 
 }
 
-.SearchBox{
+.Olin {
+  position: absolute;
+  top: 3rem;
+  right: 4rem;
+  padding: 4px 30px;
+  border-radius: 4px;
+  width: 17%; 
+}
+
+.Old_Main {
+  position: absolute;
+  top: 5rem;
+  right: 4rem;
+  padding: 4px 30px;
+  border-radius: 4px;
+  width: 17%; 
+}
+
+.Gerber {
+  position: absolute;
+  top: 7rem;
+  right: 4rem;
+  padding: 4px 30px;
+  border-radius: 4px;
+  width: 17%; 
+}
+
+.SearchBox {
   position: absolute;
   z-index: 2;
   margin: 0;
