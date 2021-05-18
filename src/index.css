@@ -12,6 +12,9 @@ code {
     monospace;
 }
 
+h3 {
+  color: #ffef0a;
+}
 h1 {
   position: absolute;
   color: #ffef0a;
@@ -78,7 +81,7 @@ h2 {
   position: absolute;
   z-index: 2;
   margin: 0;
-  left:550px;
+  left:600px;
   top:10px;
   padding: 0
 }
