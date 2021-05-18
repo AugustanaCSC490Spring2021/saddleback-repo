@@ -1,43 +1,18 @@
 export const markersLocation = [
  
     {
-      name: "Hanson Expansion",
-      lat: "41.504297",
-      long: "-90.551095",
-      type: "academic",
-    },
-    {
-      name: "Old Main",
-      lat: "41.504439",
-      long: "-90.549609",
-      type: "academic",
-    },
-    {
-      name: "Lot B",
-      lat: "41.505329",
-      long: "-90.548099",
+      name: "Lot E",
+      lat: 41.505329,
+      long: -90.548099,
       type: "parking",
     },
     {
-      name: "Olin",
-      lat: "41.50315",
-      long: "-90.550581",
-      type: "academic",
-    },
-    {
       name:"Bergendoff Hall", 
-      lat:"41.505368", 
-      long:"-90.549215", 
+      lat: 41.505368, 
+      long: -90.549215, 
       type:"academic",
     },
     {
-<<<<<<< HEAD:src/utility/MarkersLocation.js
-      name:"Gerber Center",
-      lat: "41.502559",
-      long: "-90.550047",
-      type:"academic"
-    }
-=======
       name: "Brunner Theater",
       lat: 41.504402,
       long: -90.548231,
@@ -169,7 +144,6 @@ export const markersLocation = [
       long: -90.554864,
       type: "resident halls",
     },
->>>>>>> upstream/master:src/map/MarkersLocation.js
                 
           
   ];
