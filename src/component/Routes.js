@@ -45,7 +45,7 @@ export default class Routes extends Component {
         return (
             <div>
                 <button onClick={() => this.handleClick('ACES')} class="ACES">
-                    {this.state.isShownAces ? "ACES Route" : "ACES Route"}
+                    {this.state.isShownAces ? "Hide ACES Route" : "Show ACES Route"}
                 </button>
                 <Polyline
                     path={ACESRoute}
@@ -61,7 +61,7 @@ export default class Routes extends Component {
                         ]
                     }} />
                 <button onClick = {() => this.handleClick('Olin')} class='Olin'>
-                {this.state.isShownOlin ? "Olin Routes" : "Olin Routes"}
+                {this.state.isShownOlin ? "Hide Olin Routes" : "Show Olin Routes"}
                 </button>
                 <Polyline
                     path={OlinRoute}
@@ -72,7 +72,7 @@ export default class Routes extends Component {
                         strokeColor: "#a600ff"
                     }} />
                 <button onClick = {() => this.handleClick("Old_Main")} class="Old_Main">
-                {this.state.isShownOldMain ? "Old Main Routes" : "Old Main Routes"}
+                {this.state.isShownOldMain ? "Hide Old Main Routes" : "Show Old Main Routes"}
                 </button>
                 <Polyline
                     path={OldMainRoute}
@@ -83,7 +83,7 @@ export default class Routes extends Component {
                         strokeColor: "#00d5ff"
                     }} />
                 <button onClick = {() => this.handleClick("Gerber")} class="Gerber">
-                {this.state.isShownGerber ? "Gerber Center Routes" : "Gerber Center Routes"}
+                {this.state.isShownGerber ? "Hide Gerber Center Routes" : "Show Gerber Center Routes"}
                 </button>
                 <Polyline
                     path={GerberRoute}
